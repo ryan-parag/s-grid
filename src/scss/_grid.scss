@@ -173,7 +173,7 @@ $gridDebug:			false !default;
 	@if( $display == 'ib' ) {
 
 		display: inline-block;
-		vertical-align: top;
+		vertical-align:top;
 		position: relative;
 		text-align: left; // reset
 		font-size: initial;
