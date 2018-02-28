@@ -6,7 +6,8 @@ var gulp = require('gulp'),
 	prefix = require('gulp-autoprefixer'),
 	sass = require('gulp-sass'),
 	minifyCSS = require('gulp-minify-css'),
-	sourcemaps  = require('gulp-sourcemaps');
+	sourcemaps  = require('gulp-sourcemaps'),
+	rename  = require('gulp-rename');
 
 var paths = {
   dist: './dist/',
@@ -22,6 +23,9 @@ gulp.task('sass', function () {
 		.pipe(sourcemaps.init())
 		.pipe(minifyCSS())
 		.pipe(prefix())
+		.pipe(rename({
+			prefix: 'demo-'
+		}))
 		.pipe(gulp.dest(paths.css));
 });
 
