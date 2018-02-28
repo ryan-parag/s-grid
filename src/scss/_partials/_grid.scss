@@ -1,285 +1,188 @@
-/* ============================================
-	Dead simple grids. Cross browser. Semantic. Intuitive
-	Browsers: ie8, ie10, ie11, FF, Safari, Chrome
-	Dependancies :
-		Variables below defined in your _base.scss or similar.
-			$container-class: 'foo';
-			$row-class: 'foo';
-			$column-class: 'bar';
-			$gutter: 3%; // spacing between columns
-			$max-columns: 6; //  @for loop class declarations - used for equal column single digit
-			breakpoint mixin function - included in repo.
-	Usage :
-		.columns-{percentage, double digit} for mixed columns
-			.columns-70, .columns-30 = totaling to 100
-		.columns-{single digit number} for equal coloumns
-			.columns-1
-			.columns-2, .columns-2
-			.columns-4, .columns-4, .columns-4, .columns-4
-	@include breakpoint($small) {
-		@include columns(2);
-	}
-	or for inline block grids - example below
-	.ib {
-		@include grid(ib);
-		li {
-			width: 100%;
-			font-size: 1rem;
-			@include breakpoint($small) {
-				@include columns(2, ib, $gutter: 2%);
-			}
-			@include breakpoint($medium) {
-				@include columns(3, ib, $gutter: 2%);
-			}
-		}
-	}
-============================================ */
+// SIMPLE GRID - SASS/SCSS
 
-//-------------------------------------------------------
-// GRID SETTINGS
-//-------------------------------------------------------
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
 
-// this is the fixed gutter between columns
-$gutter: 			3% !default;
-$docWidth: 			100% !default;
+// fonts
+$font-family: 'Lato', Helvetica, sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-heavy: 700;
+$font-height: 1.5;
 
-// this sets your class names
-$container-class:	"container" !default; // optional
-$row-class:			"row" !default;
-$column-class:		"columns" !default;
-$max-columns:		12 !default;
+// colors
+$dark-grey: #333447;
+$dark-gray: #333447; // for the Americans
 
-// Grid check
-$gridDebug:			true !default;
+// universal
 
-
-//-------------------------------------------------------
-// GRID FUNCTIONS
-//-------------------------------------------------------
-
-@function column-width($num, $width) {
-	@return ( $width / $num );
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
 }
 
-@function third-width($num, $width) {
-	@return $num * ( $width / 3 );
+* {
+  font-family: $font-family;
+  color: $dark-grey;
+  line-height: $font-height;
 }
 
+// typography
 
-//-------------------------------------------------------
-// CLEARFIX
-//-------------------------------------------------------
-@mixin clearfix {
-	&::after {
-		clear: both;
-		content: "";
-		display: table;
-	}
+h1 {
+  font-size: 2.5rem;
 }
 
-
-//-------------------------------------------------------
-// GRID MIXINS
-//-------------------------------------------------------
-
-@mixin set-gutter($gutter) {
-
-	margin-left: -$gutter;
-	margin-right: -$gutter;
-	padding-left: $gutter;
-
-	@include clearfix();
-
+h2 {
+  font-size: 2rem;
 }
 
-// Centered container element
-@mixin container-fixed($gutter: $gutter, $padded: false) {
-	position: relative;
-	overflow: hidden;
-	margin-right: auto;
-	margin-left: auto;
-
-	// so edges always have space
-	@if ( $padded == true ) {
-		padding-left:  ($gutter);
-		padding-right: ($gutter);
-	}
-
-	@include clearfix();
+h3 {
+  font-size: 1.375rem;
 }
 
-@mixin grid( $display: float, $gutter: $gutter ) {
-
-	box-sizing: border-box;
-
-	@if( $display == 'ib' ) {
-		font-size: 0px;
-		text-align: justify;
-		&:after {
-			content: '';
-			display: inline-block;
-			width: 100%;
-		}
-	} @else {
-		@include set-gutter($gutter);
-	}
-
+h4 {
+  font-size: 1.125rem;
 }
 
-@mixin column() {
-	box-sizing: border-box;
-	position: relative;
-	min-height: 1px;
-	width: 100%;
+h5 {
+  font-size: 1rem;
 }
 
-@mixin columns($num, $display: float, $gutter: $gutter) {
-
-	@include column();
-
-	// Note: never wrap this with a breakpoint to allow it being wrapped in other styles.
-	// e.g. #elem { @include breakpoint($small) { @include columns(2); } }
-
-	@if ( round($num) == $num ) {
-
-		// if whole number for even # cols
-		$colWidth: column-width($num, $docWidth);
-
-		@if ( $gutter != 0 ) {
-			width: calc( #{$colWidth} - ( #{$gutter} ) );
-		} @else {
-			width: column-width($num, $docWidth);
-		}
-
-		.no-gutter & {
-			width: column-width($num, $docWidth);
-		}
-
-	} @else {
-
-		@if ( $gutter != 0 ) {
-			// for mixed width cols, data-columns=".3", columns(.3)
-			width: calc( ( #{$num} * #{$docWidth} ) - ( #{$gutter} ) );
-		} @else {
-			width: ($num * $docWidth);
-		}
-
-		.no-gutter & {
-			width: ($num * $docWidth);
-		}
-
-	}
-
-	@if( $display == 'ib' ) {
-
-		display: inline-block;
-		vertical-align:top;
-		position: relative;
-		text-align: left; // reset
-		font-size: initial;
-
-	} @else {
-
-		float: left;
-		margin-right: $gutter;
-
-		.no-gutter & {
-			margin-right: 0;
-		}
-
-	}
-
+h6 {
+  font-size: 0.875rem;
 }
 
-@mixin third($num) {
-	float: left;
-	width: third-width($num, $docWidth);
+p {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 1.8;
 }
 
-// set the proportions you want to use
-@mixin grid-setup() {
-
-	@for $i from 1 through $max-columns {
-
-		[data-columns='#{$i}'],
-		.#{$column-class}-#{$i} {
-			@include columns($i);
-		}
-
-		// offsets
-		[data-offset-columns='#{$i}'],
-		.offset-#{$column-class}-#{$i} {
-			margin-left: column-width($i, $docWidth);
-		}
-
-	}
-
-	// Percentages for mixed widths
-	@for $i from 1 through 10 {
-
-		[data-columns='.#{$i}'],
-		.#{$column-class}-#{$i}0 {
-			@include columns($i/10);
-		}
-		[data-columns='.#{$i}5'],
-		.#{$column-class}-#{$i}5 {
-			@include columns((($i*10)+5)/100);
-		}
-
-		// offsets
-		[data-offset-columns='.#{$i}'],
-		.offset-#{$column-class}-#{$i} {
-			margin-left: column-width($i, $docWidth);
-		}
-		[data-offset-columns='.#{$i}5'],
-		.offset-#{$column-class}-#{$i}5 {
-			margin-left: column-width((($i*10)+5)/100, $docWidth);
-		}
-
-	}
-
+.font-light {
+  font-weight: $font-weight-light;
 }
 
-
-//-------------------------------------------------------
-// CLASS AND DATA DELEGATIONS
-//-------------------------------------------------------
-
-[class~='#{$container-class}'],
-[data-layout='container'] {
-	@include container-fixed();
+.font-regular {
+  font-weight: $font-weight-regular;
 }
 
-[class~='#{$row-class}'],
-[data-layout='grid'] {
-
-	@include grid();
-
-	@if( $gridDebug == true ) {
-		background: grey(darkest); // testing purposes
-	}
-
+.font-heavy {
+  font-weight: $font-weight-heavy;
 }
 
-[class*='#{$column-class}-'],
-[data-columns] {
-	@if( $gridDebug == true ) {
-		background: $yellow; // testing purposes
-		padding-top: 1.5rem;
-		padding-bottom: 1.5rem;
-		margin-top: 0.5rem;
-		margin-bottom: 0.5rem;
-		font-weight: 600;
-	}
+// utility
+
+.left {
+  text-align: left;
 }
 
-// find a way to reset the value of gutter to also apply to columns etc..
-.no-gutter {
-	@include set-gutter(0);
-}
-.reset-gutter {
-	@include set-gutter($gutter);
+.right {
+  text-align: right;
 }
 
-// Run grid
-@include grid-setup();
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+// grid
+
+$width: 96%;
+$gutter: 4%;
+$breakpoint-small: 33.75em; // 540px
+$breakpoint-med: 45em; // 720px
+$breakpoint-large: 60em; // 960px
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media only screen and (min-width: $breakpoint-small) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: $breakpoint-large) {
+    width: 75%;
+    max-width: 60rem;
+  }
+}
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.row [class^="col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: $width;
+}
+
+.col-1-sm { width:($width / 12) - ($gutter * 11 / 12); }
+.col-2-sm { width: ($width / 6) - ($gutter * 10 / 12); }
+.col-3-sm { width: ($width / 4) - ($gutter * 9 / 12); }
+.col-4-sm { width: ($width / 3) - ($gutter * 8 / 12); }
+.col-5-sm { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
+.col-6-sm { width: ($width / 2) - ($gutter * 6 / 12); }
+.col-7-sm { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
+.col-8-sm { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
+.col-9-sm { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
+.col-10-sm { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
+.col-11-sm { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
+.col-12-sm { width: $width; }
+
+@media only screen and (min-width: $breakpoint-med) {
+  .col-1 { width:($width / 12) - ($gutter * 11 / 12); }
+  .col-2 { width: ($width / 6) - ($gutter * 10 / 12); }
+  .col-3 { width: ($width / 4) - ($gutter * 9 / 12); }
+  .col-4 { width: ($width / 3) - ($gutter * 8 / 12); }
+  .col-5 { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
+  .col-6 { width: ($width / 2) - ($gutter * 6 / 12); }
+  .col-7 { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
+  .col-8 { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
+  .col-9 { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
+  .col-10 { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
+  .col-11 { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
+  .col-12 { width: $width; }
+
+  .hidden-sm {
+    display: block;
+  }
+}
