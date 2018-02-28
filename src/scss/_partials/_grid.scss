@@ -1,5 +1,5 @@
 /* ============================================
-	Dead simple grids. Cross browser. Semantic. Intuitive. Follows Simple's philosophy of SOMA.
+	Dead simple grids. Cross browser. Semantic. Intuitive
 	Browsers: ie8, ie10, ie11, FF, Safari, Chrome
 	Dependancies :
 		Variables below defined in your _base.scss or similar.
@@ -50,7 +50,7 @@ $column-class:		"columns" !default;
 $max-columns:		12 !default;
 
 // Grid check
-$gridDebug:			false !default;
+$gridDebug:			true !default;
 
 
 //-------------------------------------------------------
@@ -256,7 +256,7 @@ $gridDebug:			false !default;
 	@include grid();
 
 	@if( $gridDebug == true ) {
-		background: $black; // testing purposes
+		background: grey(darkest); // testing purposes
 	}
 
 }
