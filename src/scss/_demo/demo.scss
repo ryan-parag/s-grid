@@ -36,6 +36,15 @@ $grey: (
   @return map-get($grey,$x);
 }
 
+$grapa--green: #00d1b2;
+$grapa--blue: #79cbca;
+$grapa--pink: #e684ae;
+
+@mixin gradient {
+	background: $grapa--green;
+	background: linear-gradient(to right, $grapa--green, $grapa--blue, $grapa--pink);
+}
+
 // State Maps
 
 $primary: $blue;
@@ -54,9 +63,9 @@ $info: $teal;
 $info--dark: $teal--dark;
 
 // Typography
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700,900');
 
-$font: 'Montserrat';
+$font: 'Muli';
 $font-stack: $font, arial, sans-serif;
 
 body {
@@ -90,4 +99,21 @@ h6 {
 
 p {
   font-size: 1.125rem;
+}
+
+// Nav
+.nav {
+	width: 100%;
+	box-shadow: 0px 3px 6px rgba(grey(darkest), .12);
+	padding-top:1rem;
+	padding-bottom: 1rem;
+	position:relative;
+	margin-bottom:1.5rem;
+	&__stripe {
+		position: absolute;
+		width: 100%;
+		height: 5px;
+		top:0;
+		@include gradient;
+	}
 }
