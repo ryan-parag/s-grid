@@ -1,0 +1,78 @@
+body {
+	font-family: $font-stack;
+	line-height: 1.6;
+	color: grey(darkest);
+	font-size: $font-size;
+}
+
+h1 {
+  font-size: 2.5em;
+		font-weight: 900;
+}
+
+h2 {
+ font-size: 2em;
+	font-weight:700;
+}
+
+h3 {
+  font-size: 1.375em;
+		font-weight:700;
+}
+
+h4 {
+  font-size: 1.125em;
+		font-weight:700;
+}
+
+h5 {
+  font-size: 1em;
+		font-weight:700;
+}
+
+h6 {
+  font-size: 0.875em;
+		font-weight:700;
+}
+
+p {
+  font-size: 1.125em;
+		font-weight:400;
+	&:not(:last-of-type) {
+		margin-bottom: 1rem;
+	}
+}
+
+a {
+	text-decoration:none;
+	color: $grapa--green;
+}
+
+strong {
+	font-weight: 700;
+}
+
+small,
+sub,
+sup {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+blockquote {
+  margin: 0 0 2rem 1rem;
+  border-left: 2px solid $grapa--pink;
+  padding: 2rem 1rem;
+}
+
+caption,
+figcaption {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+em,
+cite,
+i {
+  font-style: italic;
+}

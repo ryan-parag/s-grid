@@ -1,0 +1,38 @@
+// Tables
+
+table {
+	width: 100%;
+	max-width: 100%;
+ margin-bottom: 1rem;
+ background-color: transparent;
+	thead {
+		vertical-align: bottom;
+		border-bottom: 1px solid grey(lightest);
+	}
+	tbody tr:nth-of-type(even) {
+		background: lighten(grey(lightest), 10%);
+	}
+	th, td {
+		text-align: inherit;
+		padding: .75rem;
+	}
+	th {
+		font-weight: 700;
+	}
+	// modifiers
+	&.table--dark {
+		background-color: grey(darkest);
+		color: white;
+		thead {
+			border-color: grey(dark);
+		}
+		tbody tr:nth-of-type(even) {
+		background: darken(grey(dark), 10%);
+	}
+	}
+	&.table--hover {
+		tbody:hover tr:not(:hover) > * {
+ opacity: .4;
+}
+	}
+}

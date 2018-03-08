@@ -5,18 +5,24 @@
 //-------------------------
 // 💯 ABSTRACTS
 //-------------------------
-@import "_demo/demo.scss";
+@import "_demo/variables.scss";
 	
 //-------------------------
 // 🕶 BASE
 //-------------------------
+@import "_partials/base.scss";
+@import "_partials/typography.scss";
+@import "_demo/demo.scss";
 	
 //-------------------------
 // 😻 LAYOUT
 //-------------------------
 @import "_partials/grid-config.scss";
 @import "_partials/grid.scss";
+@import "_partials/helpers.scss";
 
 //-------------------------
 // 🍕 COMPONENTS
 //-------------------------
+@import "_components/tables.scss";
+@import "_components/buttons.scss";
