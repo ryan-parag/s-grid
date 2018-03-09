@@ -15,7 +15,7 @@
 @import "_partials/base.scss";
 @import "_partials/typography.scss";
 @import "_partials/forms.scss";
-@import "_partials/code.scss";
+@import "_partials/prism.scss"; // Or load code.scss if not loading prism.js
 	
 //-------------------------
 // 😻 LAYOUT
