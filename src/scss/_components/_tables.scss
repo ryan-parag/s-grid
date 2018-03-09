@@ -9,9 +9,6 @@ table {
 		vertical-align: bottom;
 		border-bottom: 1px solid grey(lightest);
 	}
-	tbody tr:nth-of-type(even) {
-		background: lighten(grey(lightest), 10%);
-	}
 	th, td {
 		text-align: inherit;
 		padding: .75rem;
@@ -19,14 +16,27 @@ table {
 	th {
 		font-weight: 700;
 	}
+	tr:first-child {
+		text-align:left;
+	}
+	th, td {
+		text-align:center;
+	}
+	tr.is-selected {
+		border: 1px solid darken($grapa--green,10%);
+		background: $grapa--green;
+	}
 	// modifiers
+	&.table--striped tbody tr:nth-of-type(even) {
+		background: lighten(grey(lightest), 10%);
+	}
 	&.table--dark {
 		background-color: grey(darkest);
 		color: white;
 		thead {
 			border-color: grey(dark);
 		}
-		tbody tr:nth-of-type(even) {
+		&.table--striped tbody tr:nth-of-type(even) {
 		background: darken(grey(dark), 10%);
 	}
 	}

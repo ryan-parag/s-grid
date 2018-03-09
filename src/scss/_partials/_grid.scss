@@ -2,48 +2,6 @@
 GRID
 ==========================================================================*/
 
-// base
-
-html {
-	box-sizing: border-box;
-}
-
-*,*::before, *::after {
-	box-sizing: inherit;
-}
-
-html, body {
-	width: 100%;
-	height:100%;
-	padding: 0;
-	margin: 0;
-}
-
-
-// utility
-
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.justify {
-  text-align: justify;
-}
-
-.hidden-sm {
-  display: none;
-}
-
 // grid
 
 .container {

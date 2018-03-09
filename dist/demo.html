@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Grid Demo</title>
-    <link rel="stylesheet" href="css/demo-styles.css">
-  </head>
-  <body>
-  <header class="nav">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Grid Demo</title>
+	<link rel="stylesheet" href="css/demo-styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/code-line"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.js"></script>
+</head>
+
+<body>
+
+<header class="nav">
   <div class="nav__stripe"></div>
   <div class="container">
     <div class="row">
-      <div class="col-12"><a class="nav__logo" href="#">{{ Grid System }}</a></div>
+      <div class="col-12">
+        <div class="nav__body"><a class="nav__logo" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375.3 100">
+              <defs>
+                <linearGradient id="a" x1="50" x2="50" y1="100" gradientUnits="userSpaceOnUse">
+                  <stop class="yellow" offset="0" stop-color="#ff9f43"></stop>
+                  <stop class="red" offset="1" stop-color="#ff6b6b"></stop>
+                </linearGradient>
+                <linearGradient id="b" x1="50" x2="50" y1="100" y2="69.8" gradientUnits="userSpaceOnUse">
+                  <stop class="water-bottom" offset="0" stop-color="#54a0ff"></stop>
+                  <stop class="water-top" offset="1" stop-color="#2e86de"></stop>
+                </linearGradient>
+              </defs>
+              <path fill="url(#a)" d="M0 0h100v100H0z"></path>
+              <circle class="sun" cx="50" cy="50" r="33.7" fill="#feca57"></circle>
+              <path fill="url(#b)" d="M100 71.1c-4.9 1-8.7 2.3-18.2 2.3C66 73.4 66 69.8 50 69.8s-16 3.6-32 3.6c-9.3 0-13-1.3-18-2.3V100h100z"></path>
+              <path class="wordmark" fill="#576574" d="M215.3 24h18.4v56.2h-18.4zm-55.1 37.9V24.1h-18.4v56.2H198V61.9h-37.8zM279 24h-28v56.3h28.1a28.1 28.1 0 0 0 0-56.3zm0 37.8h-9.6V42.5h9.7a9.7 9.7 0 0 1 0 19.4zM347.2 24a28.1 28.1 0 1 0 28.1 28.2A28.1 28.1 0 0 0 347.2 24zm0 37.8a9.7 9.7 0 1 1 0-19.4 9.7 9.7 0 0 1 0 19.4z"></path>
+            </svg></a></div>
+      </div>
     </div>
   </div>
 </header>
@@ -183,7 +206,7 @@
     <div class="row">
       <div class="col-6">
         <div class="demo-container">
-          <table class="table--hover">
+          <table class="table--hover table--striped">
             <thead>
               <tr>
                 <td scope="col">#</td>
@@ -218,7 +241,7 @@
       </div>
       <div class="col-6">
         <div class="demo-container">
-          <table class="table--dark table--hover">
+          <table class="table--dark table--hover table--striped">
             <thead>
               <tr>
                 <td scope="col">#</td>
@@ -269,11 +292,109 @@
           <h5>Button Modifiers </h5>
           <button class="button button--primary" type="button">Default Size</button>
           <button class="button button--primary button--sm" type="button">Small Size</button>
-          <button class="button button--primary button--lg" type="button">Large Size</button>
+          <button class="button button--primary button--lg" type="button">Large </button>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="demo-container">
+          <form>
+            <h5>Inline Radio Buttons</h5>
+            <div class="form-check">
+              <input type="radio" name="inlineRadios" id="iRadio1"/>
+              <label for="iRadio1">Inline Radio 1</label>
+              <input type="radio" name="inlineRadios" id="iRadio2"/>
+              <label for="iRadio2">Inline Radio 2</label>
+              <input type="radio" name="inlineRadios" id="iRadio3"/>
+              <label for="iRadio3">Inline Radio 3</label>
+            </div>
+          </form>
+          <hr/>
+          <form>
+            <h5>Block Level Radio Buttons</h5>
+            <div class="form-check">
+              <fieldset>
+                <input type="radio" name="blockRadios" id="bRadio1"/>
+                <label for="bRadio1">Block Radio 1</label>
+              </fieldset>
+              <fieldset>
+                <input type="radio" name="blockRadios" id="bRadio2"/>
+                <label for="bRadio2">Block Radio 2</label>
+              </fieldset>
+              <fieldset>
+                <input type="radio" name="blockRadios" id="bRadio3"/>
+                <label for="bRadio3">Block Radio 3</label>
+              </fieldset>
+            </div>
+          </form>
+          <hr/>
+          <form>
+            <h5>Inline Checkboxes</h5>
+            <div class="form-check">
+              <input type="checkbox" name="inlineCheckboxes" id="iCheck1"/>
+              <label for="iCheck1">Inline Check 1</label>
+              <input type="checkbox" name="inlineCheckboxes" id="iCheck2"/>
+              <label for="iCheck2">Inline Check 2</label>
+              <input type="checkbox" name="inlineCheckboxes" id="iCheck3"/>
+              <label for="iCheck3">Inline Check 3</label>
+            </div>
+          </form>
+          <hr/>
+          <form>
+            <h5>Block Level Checkboxes</h5>
+            <div class="form-check">
+              <fieldset>
+                <input type="checkbox" name="blockCheckboxes" id="bCheck1"/>
+                <label for="bCheck1">Block Check 1</label>
+              </fieldset>
+              <fieldset>
+                <input type="checkbox" name="blockCheckboxes" id="bCheck2"/>
+                <label for="bCheck2">Block Check 2</label>
+              </fieldset>
+              <fieldset>
+                <input type="checkbox" name="blockCheckboxes" id="bCheck3"/>
+                <label for="bCheck3">Block Check3</label>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="demo-container">
+          <form>
+            <div class="form-input">
+              <label for="textInput">Text Input</label>
+              <input type="text" placeholder="This is a text input" id="textInput"/><small>This is help text</small>
+            </div>
+          </form>
+          <form>
+            <div class="form-input">
+              <label for="selectInput">Select</label>
+              <select id="selectInput">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <pre><code class="language-markup">&lt;div class=&quot;row&quot;&gt;
+ &lt;div class=&quot;col-4&quot;&gt;Column 4&lt;/div&gt;
+ &lt;div class=&quot;col-4&quot;&gt;Column 4&lt;/div&gt;
+ &lt;!-- Hello --&gt;&lt;!-- end Hello --&gt;
+&lt;/div&gt;</code></pre>
       </div>
     </div>
   </div>
 </section>
-  </body>
+<script>
+Prism.hooks.add('complete', CodeLine.load);	
+</script>
+</body>
+
 </html>
