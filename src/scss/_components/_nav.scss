@@ -15,7 +15,9 @@
 	}
 	&__body {
 		display: flex;
-		align-items:center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 		height: 100%;
 	}
 	&__logo {

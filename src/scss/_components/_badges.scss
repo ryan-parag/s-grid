@@ -1,0 +1,27 @@
+// badges
+
+.badge {
+	 display: inline-block;
+  padding: .4em .8em;
+  font-size: 1.1rem;
+  font-weight: 700;
+		display: inline-block;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+		background: grey(light);
+		color: white;
+		// States
+	@each $key, $val in $states {
+    &--#{$key} {
+      background-color: $val;
+						border: 1px solid darken($val, 5%);
+  				color: white;
+    }
+  }
+	// Modifiers
+	&--lg {
+		font-size: 2rem;
+	}
+}

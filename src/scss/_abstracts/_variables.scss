@@ -46,6 +46,15 @@ $grapa--pink: #e684ae;
 	background: linear-gradient(to right, $grapa--green, $grapa--blue, $grapa--pink);
 }
 
+@mixin gradient-responsive {
+	background: $grapa--green;
+	background: linear-gradient(to right, $grapa--green, $grapa--blue, $grapa--pink);
+	@media screen and (max-width: 600px) {
+		background: linear-gradient(to bottom, $grapa--green, $grapa--blue, $grapa--pink);
+	}
+}
+
+
 // State Maps
 
 $primary: $blue;

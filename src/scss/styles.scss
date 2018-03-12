@@ -1,3 +1,5 @@
+/* Lido Framework v0.1.0 */
+
 //-------------------------
 // 🌍 VENDOR
 //-------------------------
@@ -6,7 +8,7 @@
 // 💯 ABSTRACTS
 //-------------------------
 @import "_abstracts/variables.scss";
-@import "_abstracts/demo.scss";
+// @import "_abstracts/demo.scss";
 @import "_abstracts/grid-config.scss";
 	
 //-------------------------
@@ -15,7 +17,7 @@
 @import "_partials/base.scss";
 @import "_partials/typography.scss";
 @import "_partials/forms.scss";
-@import "_partials/prism.scss"; // Or load code.scss if not loading prism.js
+@import "_partials/prism.scss"; // Or load code.scss for base styles (if not loading prism.js)
 	
 //-------------------------
 // 😻 LAYOUT
@@ -30,3 +32,4 @@
 @import "_components/buttons.scss";
 @import "_components/lists.scss";
 @import "_components/nav.scss";
+@import "_components/badges.scss";

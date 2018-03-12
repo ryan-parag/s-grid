@@ -3,7 +3,7 @@
 table {
 	width: 100%;
 	max-width: 100%;
- margin-bottom: 1rem;
+ margin: 2rem 0;
  background-color: transparent;
 	thead {
 		vertical-align: bottom;
@@ -23,12 +23,12 @@ table {
 		text-align:center;
 	}
 	tr.is-selected {
-		border: 1px solid darken($grapa--green,10%);
+		border: 1px solid darken($grapa--green,12%);
 		background: $grapa--green;
 	}
 	// modifiers
 	&.table--striped tbody tr:nth-of-type(even) {
-		background: lighten(grey(lightest), 10%);
+		background: lighten(grey(lightest), 12%);
 	}
 	&.table--dark {
 		background-color: grey(darkest);
@@ -37,7 +37,7 @@ table {
 			border-color: grey(dark);
 		}
 		&.table--striped tbody tr:nth-of-type(even) {
-		background: darken(grey(dark), 10%);
+		background: darken(grey(dark), 12%);
 	}
 	}
 	&.table--hover {
@@ -46,3 +46,9 @@ table {
 }
 	}
 }
+
+	.table--megazord {
+		@extend .table--dark;
+		@extend .table--striped;
+		@extend.table--hover;
+	}
