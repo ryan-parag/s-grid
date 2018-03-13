@@ -1,0 +1,60 @@
+.row
+			.col-12
+				h4 Lists
+				p Styles for ordered, unordered, and definition lists
+				h6.u-text--primary Unordered Lists
+				ul
+					li Listed Item #1
+					li Listed Item #2
+						ul
+							li Nested Item #1
+							li Nested Item #2
+					li Listed Item #3
+				h6.u-text--primary Ordered Lists
+				ol
+					li Listed Item #1
+					li Listed Item #2
+						ul
+							li Nested Item #1
+							li Nested Item #2
+					li Listed Item #3
+				h6.u-text--primary Definition Lists
+				dl
+					dt Introduction
+					dd This the introduction description
+					dt Section 1
+					dd This the section 1 description
+					dt Conclusion
+					dd This the conclusion description
+			.col-12
+				pre.line-numbers
+					code.language-markup
+						| &lt;ul&gt;
+						|     &lt;li&gt;Listed Item #1&lt;/li&gt;
+						|     &lt;li&gt;Listed Item #2
+						|       &lt;ul&gt;
+						|         &lt;li&gt;Nested Item #1&lt;/li&gt;
+						|         &lt;li&gt;Nested Item #2&lt;/li&gt;
+						|       &lt;/ul&gt;
+						|     &lt;/li&gt;
+						|     &lt;li&gt;Listed Item #3&lt;/li&gt;
+						|   &lt;/ul&gt;
+						|   &lt;ol&gt;
+						|     &lt;li&gt;Listed Item #1&lt;/li&gt;
+						|     &lt;li&gt;Listed Item #2
+						|       &lt;ul&gt;
+						|         &lt;li&gt;Nested Item #1&lt;/li&gt;
+						|         &lt;li&gt;Nested Item #2&lt;/li&gt;
+						|       &lt;/ul&gt;
+						|     &lt;/li&gt;
+						|     &lt;li&gt;Listed Item #3&lt;/li&gt;
+						|   &lt;/ol&gt;
+						|   &lt;dl&gt;
+						|     &lt;dt&gt;Introduction&lt;/dt&gt;
+						|     &lt;dd&gt;This the introduction description&lt;/dd&gt;
+						|     &lt;dt&gt;Section 1&lt;/dt&gt;
+						|     &lt;dd&gt;This the section 1 description&lt;/dd&gt;
+						|     &lt;dt&gt;Conclusion&lt;/dt&gt;
+						|     &lt;dd&gt;This the conclusion description&lt;/dd&gt;
+						|   &lt;/dl&gt;
+				hr

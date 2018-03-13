@@ -1,0 +1,139 @@
+.row
+			.col-12
+				h4 Tables
+				p The basic styles for tables is simply a border separating the table headers from table data.
+				table
+					thead
+						tr
+							td(scope="col") #
+							th(scope="col") Column 1
+							th(scope="col") Column 2
+					tbody
+						tr
+							th(scope="row") 1
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 2
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 3
+							td Item 1
+							td Item 2
+				h6 Table Modifiers
+				p Modifiers allow us to create more advanced table styling, such as adding 'dark mode'. You can use as little or as many modifiers as you would like.
+				h6.u-text--primary Dark Mode with 
+					.badge.badge--primary .table--dark
+				table.table--dark
+					thead
+						tr
+							td(scope="col") #
+							th(scope="col") Column 1
+							th(scope="col") Column 2
+					tbody
+						tr
+							th(scope="row") 1
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 2
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 3
+							td Item 1
+							td Item 2
+				h6.u-text--primary Hover Styles with 
+					.badge.badge--primary .table--hover
+				table.table--hover
+					thead
+						tr
+							td(scope="col") #
+							th(scope="col") Column 1
+							th(scope="col") Column 2
+					tbody
+						tr
+							th(scope="row") 1
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 2
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 3
+							td Item 1
+							td Item 2
+				h6.u-text--primary Striped Rows with 
+					.badge.badge--primary .table--striped
+				table.table--striped
+					thead
+						tr
+							td(scope="col") #
+							th(scope="col") Column 1
+							th(scope="col") Column 2
+					tbody
+						tr
+							th(scope="row") 1
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 2
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 3
+							td Item 1
+							td Item 2
+				h6.u-text--primary All at once with 
+					.badge.badge--primary .table--megazord
+				table.table--megazord
+					thead
+						tr
+							td(scope="col") #
+							th(scope="col") Column 1
+							th(scope="col") Column 2
+					tbody
+						tr
+							th(scope="row") 1
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 2
+							td Item 1
+							td Item 2
+						tr
+							th(scope="row") 3
+							td Item 1
+							td Item 2
+			.col-12
+				pre
+					code.language-markup
+						| &lt;table class=&quot;table--megazord&quot;&gt;
+						|  &lt;thead&gt;
+						|    &lt;tr&gt;
+						|      &lt;td scope=&quot;col&quot;&gt;#&lt;/td&gt;
+						|      &lt;th scope=&quot;col&quot;&gt;Column 1&lt;/th&gt;
+						|      &lt;th scope=&quot;col&quot;&gt;Column 2&lt;/th&gt;
+						|    &lt;/tr&gt;
+						|  &lt;/thead&gt;
+						|  &lt;tbody&gt;
+						|    &lt;tr&gt;
+						|      &lt;th scope=&quot;row&quot;&gt;1&lt;/th&gt;
+						|      &lt;td&gt;Item 1&lt;/td&gt;
+						|      &lt;td&gt;Item 2&lt;/td&gt;
+						|    &lt;/tr&gt;
+						|    &lt;tr&gt;
+						|      &lt;th scope=&quot;row&quot;&gt;2&lt;/th&gt;
+						|      &lt;td&gt;Item 1&lt;/td&gt;
+						|      &lt;td&gt;Item 2&lt;/td&gt;
+						|    &lt;/tr&gt;
+						|    &lt;tr&gt;
+						|      &lt;th scope=&quot;row&quot;&gt;3&lt;/th&gt;
+						|      &lt;td&gt;Item 1&lt;/td&gt;
+						|      &lt;td&gt;Item 2&lt;/td&gt;
+						|    &lt;/tr&gt;
+						|  &lt;/tbody&gt;
+						| &lt;/table&gt;
+				hr

@@ -1,0 +1,14 @@
+extends _layouts/main
+
+block head_end
+	link(rel="stylesheet" href="./css/lido-styles.css")
+	link(rel="stylesheet" href="./css/styles-demo.css")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/prism.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.12.2/components/prism-scss.js")
+
+block content
+
+	include _partials/header
+	include _partials/features
+	include _partials/intro
+	include _partials/docs

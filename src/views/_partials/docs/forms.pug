@@ -1,0 +1,77 @@
+.row
+			.col-12
+				h4 Forms
+				p We all can agree that forms and inputs are a pain. Hopefully, these standardized styles make it a bit easier to work with forms.
+				form
+					h6.u-text--primary Text Inputs
+					.form-input
+						label(for="textInput") Text Input
+						input(type="text" placeholder="This is a text input" id="textInput")
+						small This is help text
+					h6.u-text--primary Inline Radios/Checkboxes
+					.form-check
+							input(type="radio" name="inlineRadios" id="iRadio1")
+							label(for="iRadio1") Inline Radio 1
+							input(type="radio" name="inlineRadios" id="iRadio2")
+							label(for="iRadio2") Inline Radio 2
+							input(type="radio" name="inlineRadios" id="iRadio3")
+							label(for="iRadio3") Inline Radio 3
+					h6.u-text--primary Block Radios/Checkboxes
+					.form-check
+							fieldset
+								input(type="checkbox" name="blockCheckboxes" id="bCheck1")
+								label(for="bCheck1") Block Check 1
+							fieldset
+								input(type="checkbox" name="blockCheckboxes" id="bCheck2")
+								label(for="bCheck2") Block Check 2
+							fieldset
+								input(type="checkbox" name="blockCheckboxes" id="bCheck3")
+								label(for="bCheck3") Block Check3
+					h6.u-text--primary Select Inputs
+					.form-input
+							label(for="selectInput") Select
+							select(id="selectInput")
+								option Option 1
+								option Option 2
+								option Option 3
+			.col-12
+				pre.line-numbers
+					code.language-markup
+						| &lt;form&gt;
+						|  &lt;div class=&quot;form-input&quot;&gt;
+						|   &lt;label for=&quot;textInput&quot;&gt;Text Input&lt;/label&gt;
+						|   &lt;input type=&quot;text&quot; placeholder=&quot;This is a text input&quot; id=&quot;textInput&quot;/&gt;
+						|   &lt;small&gt;This is help text&lt;/small&gt;
+						|  &lt;/div&gt;
+						|  &lt;div class=&quot;form-check&quot;&gt;
+						|   &lt;input type=&quot;radio&quot; name=&quot;inlineRadios&quot; id=&quot;iRadio1&quot;/&gt;
+						|   &lt;label for=&quot;iRadio1&quot;&gt;Inline Radio 1&lt;/label&gt;
+						|   &lt;input type=&quot;radio&quot; name=&quot;inlineRadios&quot; id=&quot;iRadio2&quot;/&gt;
+						|   &lt;label for=&quot;iRadio2&quot;&gt;Inline Radio 2&lt;/label&gt;
+						|   &lt;input type=&quot;radio&quot; name=&quot;inlineRadios&quot; id=&quot;iRadio3&quot;/&gt;
+						|   &lt;label for=&quot;iRadio3&quot;&gt;Inline Radio 3&lt;/label&gt;
+						|  &lt;/div&gt;
+						|  &lt;div class=&quot;form-check&quot;&gt;
+						|   &lt;fieldset&gt;
+						|    &lt;input type=&quot;checkbox&quot; name=&quot;blockCheckboxes&quot; id=&quot;bCheck1&quot;/&gt;
+						|    &lt;label for=&quot;bCheck1&quot;&gt;Block Check 1&lt;/label&gt;
+						|   &lt;/fieldset&gt;
+						|   &lt;fieldset&gt;
+						|    &lt;input type=&quot;checkbox&quot; name=&quot;blockCheckboxes&quot; id=&quot;bCheck2&quot;/&gt;
+						|    &lt;label for=&quot;bCheck2&quot;&gt;Block Check 2&lt;/label&gt;
+						|   &lt;/fieldset&gt;
+						|   &lt;fieldset&gt;
+						|    &lt;input type=&quot;checkbox&quot; name=&quot;blockCheckboxes&quot; id=&quot;bCheck3&quot;/&gt;
+						|    &lt;label for=&quot;bCheck3&quot;&gt;Block Check3&lt;/label&gt;
+						|   &lt;/fieldset&gt;
+						|  &lt;/div&gt;
+						|  &lt;div class=&quot;form-input&quot;&gt;
+						|   &lt;label for=&quot;selectInput&quot;&gt;Select&lt;/label&gt;
+						|   &lt;select id=&quot;selectInput&quot;&gt;
+						|    &lt;option&gt;Option 1&lt;/option&gt;
+						|    &lt;option&gt;Option 2&lt;/option&gt;
+						|    &lt;option&gt;Option 3&lt;/option&gt;
+						|   &lt;/select&gt;
+						|  &lt;/div&gt;
+						| &lt;/form&gt;
+				hr

@@ -1,0 +1,58 @@
+.row
+			.col-12
+				h4 Utilities/Helpers
+				p Lido has a number of small utility classes which can be used to style elements on the fly and make your life a whole lot easier.
+			.col-12
+				pre.line-numbers
+					code.lang-scss
+						| // Helpers / Utilities
+						| .u-full-width {
+						|   width: 100%;
+						| }
+						| .u-max-full-width {
+						|   max-width: 100%;
+						| }
+						|
+						| /* Float text with eg. .u-text--right */
+						| @each $pull in right, left {
+						|   .u-pull--\#{$pull} {
+						|     float: \#{$pull};
+						|   }
+						| }
+						|
+						| /* Align text with eg. .u-text--center */
+						| @each $text-align in right, left, center, justify {
+						|   .u-text--\#{$text-align} {
+						|     text-align: \#{$text-align};
+						|   }
+						| }
+						|
+						| .u-disabled{
+						|   cursor: default;
+						|   opacity: .5;
+						|   pointer-events: none;
+						| }
+						|
+						| /* Clear inner floats */
+						| .u-clearfix {
+						|   &:after {
+						|     clear: both;
+						|     content: "";
+						|     display: table;
+						|   }
+						| }
+						|
+						| .u-hidden-sm {
+						|   display: none;
+						| }
+						|
+						| /* Color text with eg. .u-text--primary
+						|	$states = primary, danger, default, success, warning, info
+						|	*/
+						| .u-text {
+						| 	@each $key, $val in $states {
+						|     &--\#{$key} {
+						|      color: $val;
+						|     }
+						|   }
+						| }
