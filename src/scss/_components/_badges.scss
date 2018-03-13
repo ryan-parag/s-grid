@@ -11,6 +11,8 @@
   white-space: nowrap;
   vertical-align: baseline;
 		background: grey(light);
+		top: -2px;
+		position:relative;
 		color: white;
 		// States
 	@each $key, $val in $states {

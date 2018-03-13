@@ -32,3 +32,16 @@ li {
   padding-left: .2rem;
   margin-bottom: .5rem;
 }
+
+dl {
+	margin: 1.5rem 0;
+	dt {
+		font-weight: 700;
+	}
+	dd {
+		padding-left: 1rem;
+		&:not(:last-of-type) {
+			margin-bottom: 1rem;
+		}
+	}
+}
